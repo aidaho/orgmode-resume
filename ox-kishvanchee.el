@@ -54,6 +54,8 @@ in case TO-DATE is nil return Present"
   :options-alist
   '((:mobile "MOBILE" nil nil parse)
     (:linkedin "LINKEDIN" nil nil parse)
+    (:github "GITHUB" nil nil parse)
+    (:upwork "UPWORK" nil nil parse)
     (:anon "ANON" nil nil parse))
   :translate-alist '((template . org-kishvanchee-template)
                      (headline . org-kishvanchee-headline)))
@@ -99,7 +101,20 @@ holding export options."
                      "anon"
                    (org-export-data (plist-get info :linkedin) info))))
      (when (org-string-nw-p linkedin)
-       (format "$|$ \\href{https://linkedin.com/in/%s/}{linkedin.com/in/%s/}" linkedin linkedin)))
+       (format "$|$ \\href{https://linkedin.com/in/%s/}{linkedin.com/in/%s/ }" linkedin linkedin)))
+   ;; github
+   (let ((github (if (org-string-nw-p anon)
+                     "anon"
+                   (org-export-data (plist-get info :github) info))))
+     (when (org-string-nw-p github)
+       (format "$|$ \\href{https://github.com/%s/}{github.com/%s/ }" github github)))
+   ;; upwork
+   (let ((upwork (if (org-string-nw-p anon)
+                     "anon"
+                   (org-export-data (plist-get info :upwork) info))))
+     (when (org-string-nw-p upwork)
+       (format "$|$ \\href{https://upwork.com/freelancers/%s/}{upwork.com/freelancers/%s/ }" upwork upwork)))
+
    (format "\n\\end{center}\n\n")
 
    contents
