@@ -52,7 +52,8 @@ in case TO-DATE is nil return Present"
 (org-export-define-derived-backend 'kishvanchee 'latex
   ;'((section . org-kishvanchee-latex-section))
   :options-alist
-  '((:mobile "MOBILE" nil nil parse)
+  '((:hiddentext "HIDDENTEXT" nil nil parse)
+    (:mobile "MOBILE" nil nil parse)
     (:linkedin "LINKEDIN" nil nil parse)
     (:github "GITHUB" nil nil parse)
     (:upwork "UPWORK" nil nil parse)
@@ -75,6 +76,13 @@ holding export options."
 
    ;; Document start.
    "\\begin{document}\n\n"
+
+   ;; hidden
+   (let ((hiddentext (if (org-string-nw-p anon)
+                     ""
+                   (org-export-data (plist-get info :hiddentext) info))))
+     (when (org-string-nw-p hiddentext)
+      (format "{\\tiny \\color{white} %s}\n" hiddentext)))
 
    (format "\\begin{center}\n")
    ;; name
