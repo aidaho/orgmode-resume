@@ -1,5 +1,5 @@
 #+title: Serhii Frolov's Resume
-#+options: author:t email:t creator:t hiddentext:t toc:nil num:nil title:nil
+#+options: author:t email:t creator:t hiddentext:t image:t toc:nil num:nil title:nil
 #+date: \today
 #+author: Serhii Frolov
 #+email: dunkan.aidaho@gmail.com
@@ -7,10 +7,11 @@
 #+mobile: +48 606 974 212
 #+github: aidaho
 #+upwork: sergeyfrolov
-#+creator: Emacs 28.2 (Org mode 9.6.8)
+#+image: face2020bw
+#+creator: Emacs 29.4 (Org mode 9.7.11)
 # #+anon: t
 
-I am a Python programmer with 10+ years of experience in developing and maintaining web applications.
+I am a programmer with 10+ years of experience in developing and maintaining web applications.
 
 I'm proficient in Python. If you have something written in it, there is a good chance I'll be able to help you.
 
@@ -30,6 +31,7 @@ Additionally, I have experience in training and integrating AI into the existing
 - Wrote two-dimensional regexp engine for parsing PDFs.
 - Implemented and maintained scraper fleet on top of Celery queue.
 - Invented a fake ORM for improving DB consistency for a lot of error-prone legacy code, without ever touching it.
+- Migrated the whole codebase from Python2 to Python3.
 - Implemented automated application deployment and service tasks first for VPS/VDS, later for AWS.
 
 
@@ -72,8 +74,6 @@ Additionally, I have experience in training and integrating AI into the existing
 :TO: <2012-12-01 Sat>
 :END:
 - Worked as a freelance on-site problem-solving engineer.
-- Solved a number of tricky hardware failures.
-- Performed couple of successful data recoveries.
 - Wrote custom tools in order to revive client's accounting software DB (DBaseIII-based).
 
 ** Taurida National University
@@ -86,15 +86,16 @@ Additionally, I have experience in training and integrating AI into the existing
 :TO: <2011-06-01 Wed>
 :END:
 - Managed university's network of Ubuntu machines with FreeBSD transparent proxy server.
-- Provided hardware maintenance
 
 * Skills
 
-- *Machine Languages*:  Python, SQL, JavaScript, HTML, CSS, Bash, C
+- *Machine Languages*:  Python, TypeScript, JavaScript, SQL, HTML, CSS, Bash, C
 - *Natural Languages*:  English: Fluent | Ukrainian: Native | Russian: Native | Polish: Basic
-- *Frameworks*: Django, kid3, Bootstrap
-- *Developer Tools*: Linux, Git, Mercurial, SVN, Emacs, Docker, virtualenv, Bitbucket CI, Github Actions, Jenkins
-- *Libraries*: BeauifulSoup, Matplotlib, Tensorflow, NumPy
+- *Frameworks*: Django, REST, Next.js, Selenium, Celery, Bootstrap, Tailwind
+- *Databases*: PostgreSQL, MySQL, MariaDB, SQLite
+- *Environments*: AWS, VPS, VDS, Linux, Docker
+- *Developer Tools*: Git, Mercurial, SVN, Emacs, virtualenv, Bitbucket CI, Github Actions, Jenkins
+- *Libraries*: BeauifulSoup, React, jQuery, Matplotlib, Tensorflow, NumPy
 
 * Education
 ** Taurida National University
