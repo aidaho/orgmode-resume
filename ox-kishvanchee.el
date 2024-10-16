@@ -57,6 +57,7 @@ in case TO-DATE is nil return Present"
     (:linkedin "LINKEDIN" nil nil parse)
     (:github "GITHUB" nil nil parse)
     (:upwork "UPWORK" nil nil parse)
+    (:image "IMAGE" nil nil parse)
     (:anon "ANON" nil nil parse))
   :translate-alist '((template . org-kishvanchee-template)
                      (headline . org-kishvanchee-headline)))
@@ -125,6 +126,17 @@ holding export options."
 
    (format "\n\\end{center}\n\n")
 
+   ;; image
+   (let ((image (if (org-string-nw-p anon)
+                     ""
+                     (and (plist-get info :image)
+                          (org-export-data (plist-get info :image) info)))))
+     (format "\\begin{wrapfigure}[3]{L}{1.5cm}\n\
+\\centering\n\
+\\raisebox{10pt}[\\dimexpr\\height-0.6\\baselineskip\\relax]{\\includegraphics[width=1.5cm]{%s}}%%\n\
+\\end{wrapfigure}\n" image image))
+
+   ;; Rest of the document
    contents
 
    ;; Document end.
