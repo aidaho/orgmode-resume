@@ -1,7 +1,7 @@
-
+(setq debug-on-error t)
 (defvar cwd default-directory)
 (defvar workdir "./")
-(eval-buffer)
+
 (add-to-list 'load-path cwd)
 (require 'ox-kishvanchee)
 
